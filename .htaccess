@@ -1,0 +1,10 @@
+# mod_rewrite starts here
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILE_NAME} !-d
+
+# check for file in directory with .html
+RewriteCond %{REQUEST_FILE_NAME}\.html -f
+
+RewriteRule ^(.*)$ $1.html [NC,L]
